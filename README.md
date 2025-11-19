@@ -1,17 +1,17 @@
 # Reset Divi Presets
 
-**Contributors:** Pavel Kolpakov
-**Requires at least:** 5.0
-**Tested up to:** 6.4
-**Stable tag:** 2.0.0
-**License:** GPLv2 or later
-**License URI:** https://www.gnu.org/licenses/gpl-2.0.html
+- **Contributors:** Pavel Kolpakov
+- **Requires at least:** 5.0
+- **Tested up to:** 6.4
+- **Stable tag:** 2.0.0
+- **License:** GPLv2 or later
+- **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
 Adds a convenient admin bar menu to quickly reset Divi 4 and Divi 5 global presets without leaving the page you are on.
 
 ## Description
 
-This plugin provides a simple and efficient way to clear Divi's global color and font presets. After activation, a new menu item, "Reset Divi Presets," is added to the WordPress admin bar, visible to users with `manage_options` capabilities.
+This plugin provides a simple and efficient way to clear Divi's 4 Element Presets as well as Divi 5 Element and Option Group Presets. After activation, a new menu item, "Reset Divi Presets," is added to the WordPress admin bar, visible to users with `manage_options` capabilities.
 
 This menu contains two options:
 
