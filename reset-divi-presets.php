@@ -4,6 +4,7 @@
  * Description:       Adds an admin bar menu with options to reset Divi 4 and Divi 5 global presets.
  * Version:           2.0.0
  * Author:            Pavel Kolpakov
+ * Contributors:      Eduard Ungureanu
  * Author URI:        https://example.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
