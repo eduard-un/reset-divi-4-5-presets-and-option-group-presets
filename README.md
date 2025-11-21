@@ -1,7 +1,7 @@
 # Reset Divi Presets
 
 - **Contributors:** Pavel Kolpakov, Eduard Ungureanu
-- **Requires at least:** 5.0
+- **Requires at least:** Divi 4 (v. 4.27) and/or Divi 5 (v. Beta 2)
 - **Tested up to:** 6.4
 - **Stable tag:** 2.0.0
 - **License:** GPLv2 or later
