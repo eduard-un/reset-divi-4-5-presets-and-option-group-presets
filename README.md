@@ -13,10 +13,11 @@ Adds a convenient admin bar menu to quickly reset Divi 4 and Divi 5 global prese
 
 This plugin provides a simple and efficient way to clear Divi's 4 Element Presets as well as Divi 5 Element and Option Group Presets. After activation, a new menu item, "Reset Divi Presets," is added to the WordPress admin bar, visible to users with `manage_options` capabilities.
 
-This menu contains two options:
+This menu contains three options:
 
 *   **Reset Divi 4 Presets:** Deletes the global presets associated with Divi 4.
 *   **Reset Divi 5 Presets:** Deletes the global presets associated with Divi 5.
+*   **Reset Global Variables:** Clears the `et_global_data` from the `et_divi` option and deletes the `et_divi_global_variables` option from the database.
 
 ## How It Works
 

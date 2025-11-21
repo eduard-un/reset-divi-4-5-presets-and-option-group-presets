@@ -74,6 +74,11 @@ final class Reset_Divi_Presets {
 			'_wpnonce' => wp_create_nonce( 'reset_divi_5_presets' ),
 		], $current_url );
 
+		$reset_global_variables_url = add_query_arg( [
+			'action'   => 'reset_global_variables',
+			'_wpnonce' => wp_create_nonce( 'reset_global_variables' ),
+		], $current_url );
+
 		$wp_admin_bar->add_node( [
 			'id'     => 'reset-divi-4-presets',
 			'title'  => __( 'Reset Divi 4 Presets', 'reset-divi-presets' ),
@@ -91,6 +96,16 @@ final class Reset_Divi_Presets {
 			'href'   => $reset_divi_5_url,
 			'meta'   => [
 				'onclick' => 'return confirm("' . __( 'Are you sure you want to reset Divi 5 presets?', 'reset-divi-presets' ) . '");',
+			],
+		] );
+
+		$wp_admin_bar->add_node( [
+			'id'     => 'reset-global-variables',
+			'title'  => __( 'Reset Global Variables', 'reset-divi-presets' ),
+			'parent' => 'reset-divi-presets',
+			'href'   => $reset_global_variables_url,
+			'meta'   => [
+				'onclick' => 'return confirm("' . __( 'Are you sure you want to reset global variables?', 'reset-divi-presets' ) . '");',
 			],
 		] );
 	}
@@ -120,6 +135,18 @@ final class Reset_Divi_Presets {
 			wp_safe_redirect( add_query_arg( 'rdp_notice', 'divi_5_reset', $redirect_url ) );
 			exit;
 		}
+
+		if ( isset( $_GET['action'] ) && 'reset_global_variables' === $_GET['action'] ) {
+			check_admin_referer( 'reset_global_variables' );
+			$et_divi_options = get_option( 'et_divi' );
+			if ( ! empty( $et_divi_options ) ) {
+				$et_divi_options['et_global_data'] = '';
+				update_option( 'et_divi', $et_divi_options );
+			}
+			delete_option( 'et_divi_global_variables' );
+			wp_safe_redirect( add_query_arg( 'rdp_notice', 'global_variables_reset', $redirect_url ) );
+			exit;
+		}
 	}
 
 	/**
@@ -138,6 +165,10 @@ final class Reset_Divi_Presets {
 
 		if ( 'divi_5_reset' === $_GET['rdp_notice'] ) {
 			$notice = __( 'Divi 5 presets have been reset.', 'reset-divi-presets' );
+		}
+
+		if ( 'global_variables_reset' === $_GET['rdp_notice'] ) {
+			$notice = __( 'Global variables have been reset.', 'reset-divi-presets' );
 		}
 
 		if ( $notice ) {
@@ -161,6 +192,10 @@ final class Reset_Divi_Presets {
 
 		if ( 'divi_5_reset' === $_GET['rdp_notice'] ) {
 			$notice = __( 'Divi 5 presets have been reset.', 'reset-divi-presets' );
+		}
+
+		if ( 'global_variables_reset' === $_GET['rdp_notice'] ) {
+			$notice = __( 'Global variables have been reset.', 'reset-divi-presets' );
 		}
 
 		if ( $notice ) {
